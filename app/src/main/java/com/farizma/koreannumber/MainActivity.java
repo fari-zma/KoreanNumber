@@ -1,8 +1,6 @@
 package com.farizma.koreannumber;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,44 +22,62 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        System.exit(0);
+    }
+
     public void play(View view) {
         switch (view.getId()) {
-            case R.id.one: mediaPlayer = MediaPlayer.create(this, R.raw.one);
+            case R.id.one: stopPlaying();
+                           mediaPlayer = MediaPlayer.create(this, R.raw.one);
                            mediaPlayer.start();
                            break;
-            case R.id.two: mediaPlayer = MediaPlayer.create(this, R.raw.two);
+            case R.id.two: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.two);
                             mediaPlayer.start();
                             break;
-            case R.id.three: mediaPlayer = MediaPlayer.create(this, R.raw.three);
+            case R.id.three: stopPlaying();
+                             mediaPlayer = MediaPlayer.create(this, R.raw.three);
                              mediaPlayer.start();
                              break;
-            case R.id.four: mediaPlayer = MediaPlayer.create(this, R.raw.four);
+            case R.id.four: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.four);
                             mediaPlayer.start();
                             break;
-            case R.id.five: mediaPlayer = MediaPlayer.create(this, R.raw.five);
+            case R.id.five: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.five);
                             mediaPlayer.start();
                             break;
-            case R.id.six: mediaPlayer = MediaPlayer.create(this, R.raw.six);
-                           mediaPlayer.start();
-                            break;
-            case R.id.seven: mediaPlayer = MediaPlayer.create(this, R.raw.seven);
+            case R.id.six: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.six);
                             mediaPlayer.start();
                             break;
-            case R.id.eight: mediaPlayer = MediaPlayer.create(this, R.raw.eight);
+            case R.id.seven: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.seven);
                             mediaPlayer.start();
                             break;
-            case R.id.nine: mediaPlayer = MediaPlayer.create(this, R.raw.nine);
+            case R.id.eight: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.eight);
                             mediaPlayer.start();
                             break;
-            case R.id.ten: mediaPlayer = MediaPlayer.create(this, R.raw.ten);
+            case R.id.nine: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.nine);
+                            mediaPlayer.start();
+                            break;
+            case R.id.ten: stopPlaying();
+                            mediaPlayer = MediaPlayer.create(this, R.raw.ten);
                             mediaPlayer.start();
                             break;
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mediaPlayer.release();
+    void stopPlaying() {
+        if(mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
