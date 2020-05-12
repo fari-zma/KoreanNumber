@@ -16,16 +16,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.one);
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
 
     @Override
-    public void onBackPressed() {
-        finish();
-        System.exit(0);
+    protected void onStart() {
+        super.onStart();
+        mediaPlayer = MediaPlayer.create(this, R.raw.one);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlaying();
     }
 
     public void play(View view) {
