@@ -7,7 +7,7 @@ Background: https://images.pexels.com/photos/2849042/pexels-photo-2849042.jpeg?a
 ![](app/src/main/res/mipmap-mdpi/ic_launcher.png)
 ![](app/src/main/res/mipmap-mdpi/ic_launcher_round.png)
 
-## **ScreenShot**
+## **Screenshot**
 <img src="src/screenshot.png" width=200 height=400/>
 
 <img src="src/screenshot_land.png" width=400 height=200/>
