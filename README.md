@@ -14,3 +14,6 @@ Background: https://images.pexels.com/photos/2849042/pexels-photo-2849042.jpeg?a
 
 ## **Apk**
 [app-debug.apk](src/app-debug.apk?raw=true)
+
+## **License**
+Licensed under the [MIT License](LICENSE)
